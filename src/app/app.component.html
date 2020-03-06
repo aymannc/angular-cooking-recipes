@@ -1,5 +1,5 @@
-<app-header></app-header>
+<app-header (onPageChanged)="ChangeCurrentPage($event)"></app-header>
 <div class="container">
-    <app-recipes></app-recipes>
-    <app-shopping-list></app-shopping-list>
+  <app-recipes *ngIf="currentPage == 'recipes'"></app-recipes>
+  <app-shopping-list *ngIf="currentPage != 'recipes'"></app-shopping-list>
 </div>

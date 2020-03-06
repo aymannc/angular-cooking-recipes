@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="recipe">
   <div class="col-12">
     <div class="dropdown open float-right">
       <button class="btn btn-primary dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown"
@@ -14,24 +14,25 @@
     </div>
   </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="recipe">
   <div class="col-12">
-    <h1 class="text-center">Title</h1>
+    <h1 class="text-center">{{recipe.name}}</h1>
   </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="recipe">
   <div class="col-12 text-center mt-3 mx-1">
-    <img src="https://img.taste.com.au/SK8COUDH/taste/2016/11/beef-and-pear-tagine-1316-1.jpeg"
+    <img src="{{recipe.imageUrl}}"
          class="card-img mx-auto d-block" alt="...">
   </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="recipe">
   <div class="col-12 text-center mt-3 mx-1">
-    <p>Desc</p>
+    <p> {{recipe.description}}</p>
   </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="recipe">
   <div class="col-12 text-center mt-3 mx-1">
-    <p>Ingredients </p>
+    <p>Ingredient</p>
   </div>
 </div>
+

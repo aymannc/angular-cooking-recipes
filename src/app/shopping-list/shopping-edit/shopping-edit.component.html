@@ -4,18 +4,20 @@
       <div class="row">
         <div class="col-5 form-group">
           <label for="nameInput">Name</label>
-          <input type="text"
+          <!--          <input type="text"-->
+          <input [(ngModel)]="name" type="text"
                  class="form-control" name="Name" id="nameInput" aria-describedby="helpId" placeholder="">
         </div>
         <div class="col-2 form-group">
-          <label for="amountInput">Amount</label>
-          <input type="number"
+                    <label for="amountInput">Amount</label>
+          <!--          <input type="number"-->
+          <input [(ngModel)]="amount" type="number"
                  class="form-control" name="Amount" id="amountInput" aria-describedby="helpId" placeholder="">
         </div>
       </div>
       <div class="row">
         <div class="col-12">
-          <button class="btn btn-success mr-3">Add</button>
+          <button class="btn btn-success mr-3" (click)="addIngredient()">Add</button>
           <button class="btn btn-danger mr-3">Delete</button>
           <button class="btn btn-primary mr-3">Clear</button>
         </div>
