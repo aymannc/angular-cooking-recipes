@@ -7,9 +7,9 @@
         Manage Recipe
       </button>
       <div class="dropdown-menu" aria-labelledby="triggerId">
-        <button class="dropdown-item">To shoping list</button>
-        <button class="dropdown-item">Edit recipe</button>
-        <button class="dropdown-item">Delete recipe</button>
+        <button (click)="addToShopingList()" class="dropdown-item">To shoping list</button>
+        <button (click)="editRecipe()" class="dropdown-item">Edit recipe</button>
+        <button (click)="deleteRecipe()" class="dropdown-item">Delete recipe</button>
       </div>
     </div>
   </div>
@@ -31,8 +31,12 @@
   </div>
 </div>
 <div class="row" *ngIf="recipe">
-  <div class="col-12 text-center mt-3 mx-1">
-    <p>Ingredient</p>
+  <h4> Ingredients</h4>
+  <div class="col-12 text-center m-3 mx-1">
+    <ul class="list-group">
+      <li *ngFor="let ingredient of recipe.ingredients"
+          class="list-group-item border-dark">{{ingredient.name}} {{ingredient.amount}}</li>
+    </ul>
   </div>
 </div>
 

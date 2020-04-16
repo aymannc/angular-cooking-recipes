@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-  <a class="navbar-brand" href="#">The world of recepies</a>
+  <a [routerLink]="['/']" class="navbar-brand">The world of recipes</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -7,24 +7,22 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#" (click)="onPageSelected('recipes')">Recepies <span class="sr-only">(current)</span></a>
+      <li class="nav-item" routerLinkActive="active">
+        <a [routerLink]="['/recipes']" class="nav-link">Recipes <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#" (click)="onPageSelected('shoping-list')">Shoping List</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a [routerLink]="['/shopping-list']" class="nav-link">Shopping List</a>
       </li>
     </ul>
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto mr-5">
       <li class="nav-item dropdown" appShowDroupdown>
-        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">
-          Manage
+        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle active" data-toggle="dropdown"
+           id="navbarDropdown" role="button" style="cursor: pointer">
+          Data
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a (click)="onFetchData()" class="dropdown-item" style="cursor: pointer">Fetch Data</a>
+          <a (click)="onUploadData()" class="dropdown-item" style="cursor: pointer">Upload Data</a>
         </div>
       </li>
     </ul>

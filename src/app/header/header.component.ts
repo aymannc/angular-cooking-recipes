@@ -1,21 +1,22 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component} from '@angular/core';
+import {BackendStorageService} from '../shared/backend-storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
-  @Output() onPageChanged = new EventEmitter<string>();
-
-  constructor() {
+export class HeaderComponent {
+  constructor(private backendStorageService: BackendStorageService,
+              private router: Router) {
   }
 
-  ngOnInit(): void {
+  onFetchData() {
+    this.router.navigate(['']);
+    this.backendStorageService.onFetchData().subscribe();
   }
 
-  onPageSelected(page: string) {
-    // console.log(page);
-    this.onPageChanged.emit(page);
+  onUploadData() {
+    this.backendStorageService.onUploadData();
   }
 }
